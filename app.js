@@ -27,7 +27,7 @@ let cards = document.querySelector('.cards');
 let xhr = new XMLHttpRequest();
 xhr.open(
   'GET',
-  'http://newsapi.org/v2/top-headlines?country=in&apiKey=093d814de7c14eee8bbec5784c289ec4',
+  'https://newsapi.org/v2/top-headlines?country=in&apiKey=093d814de7c14eee8bbec5784c289ec4',
   true
 );
 xhr.onload = function () {
