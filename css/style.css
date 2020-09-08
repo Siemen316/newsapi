@@ -78,6 +78,7 @@ a {
 .content {
   margin: 1rem;
 }
+
 .card-white {
   background-color: #fff;
   color: #12181b;
@@ -85,6 +86,11 @@ a {
 }
 .card-a {
   color: #12181b;
+}
+#txt {
+  outline: none;
+  padding: 0.2rem;
+  text-align: center;
 }
 @media (max-width: 650px) {
   nav {
@@ -107,7 +113,7 @@ a {
     cursor: pointer;
   }
   .flex-show {
-    height: 13rem;
+    height: 16rem;
   }
   .card {
     flex-direction: column;
@@ -115,5 +121,8 @@ a {
   }
   .content {
     margin: 0;
+  }
+  .content h2 {
+    font-size: 1.1rem;
   }
 }

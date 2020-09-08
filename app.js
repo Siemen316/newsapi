@@ -38,8 +38,9 @@ xhr.onload = function () {
                     <img src=${news.urlToImage} alt="">
                         <div class="content">
                             <a href="${news.url}" target="_blank">
-                            <h2>${news.title}</h2>
+                            <h2 class = "title">${news.title}</h2>
                             <p>${news.description}</p>
+                            <p>Source : ${news.source.name}</p>
                             </a>
                         </div>
                 </div>
@@ -49,3 +50,19 @@ xhr.onload = function () {
   cards.innerHTML = showNews;
 };
 xhr.send();
+
+//SEARCH (OPTIONAL)
+
+let txt = document.getElementById('txt');
+txt.addEventListener('input', () => {
+  let value = txt.value.toUpperCase();
+  let card = document.querySelectorAll('.card');
+  card.forEach((car) => {
+    let title = car.querySelector('.title').innerHTML;
+    if (title.toUpperCase().includes(value)) {
+      car.style.display = 'block';
+    } else {
+      car.style.display = 'none';
+    }
+  });
+});
