@@ -10,7 +10,6 @@ dark.addEventListener('click', () => {
   nav.classList.toggle('nav-white');
   a.forEach((dark) => dark.classList.toggle('a-white'));
   let card = cards.firstElementChild;
-  console.log(card);
   Array.from(card).forEach((dark) => dark.classList.toggle('card-white'));
 });
 
