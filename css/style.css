@@ -9,6 +9,7 @@
   --text-clr: #fff;
   --second-clr: #383838;
   --box-shadow: 4px 0 10px -3px hsl(0deg, 0%, 0%);
+  --box-shadow2: 0 -2px 10px rgba(0, 0, 0, 1);
 }
 
 .white {
@@ -16,6 +17,7 @@
   --text-clr: black;
   --second-clr: #fff;
   --box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  --box-shadow2: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
 body {
@@ -31,9 +33,13 @@ body {
 nav {
   background-color: var(--second-clr);
   box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow2);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .ham {
@@ -66,21 +72,24 @@ a {
 
 .card {
   display: flex;
-  width: 75vw;
-  margin: 1rem auto;
+  width: 60vw;
+  margin: 1.2rem auto;
   padding: 1rem;
   background-color: var(--second-clr);
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: var(--box-shadow);
   color: var(--text-clr);
+  position: relative;
 }
 .card img {
-  width: 300px;
+  width: 270px;
   max-height: 200px;
   object-fit: cover;
+  border-radius: 5px;
 }
+
 .content {
-  margin: 1rem;
+  margin-left: 2rem;
 }
 
 .content h2 {
@@ -116,6 +125,12 @@ a {
   border-radius: 4px;
   border: 0;
   padding: 0.3rem;
+  background-color: var(--text-clr);
+  color: var(--clr-prim);
+}
+
+#txt::placeholder {
+  color: var(--clr-prim);
 }
 
 .details {
@@ -132,6 +147,8 @@ a {
   cursor: pointer;
   border-radius: 5px;
   padding: 7px 10px;
+  position: absolute;
+  right: 1rem;
 }
 
 @media (max-width: 650px) {
