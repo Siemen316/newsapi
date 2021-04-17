@@ -10,9 +10,11 @@ ham.addEventListener('click', () => flex.classList.toggle('flex-show'));
 
 //API STUFF!
 window.addEventListener('load', showNews);
+const apiURL = 'https://kodagu.today/newsarticles?_sort=published_at:desc';
 let cards = document.querySelector('.cards');
+
 async function showNews() {
-  const res = await fetch('https://kodagu.today/newsarticles');
+  const res = await fetch(apiURL);
   const data = await res.json();
   const ui = data
     .map((news) => {
@@ -24,7 +26,7 @@ async function showNews() {
                 <p class = "category">Category : ${news.newsCategories}</p>
                 </a>
                 <div class="details">
-                    <p>${new Date(news.published_at).toLocaleDateString()}</p>
+                    <p>${new Date(news.published_at).toLocaleString()}</p>
                     <a class="btn" href="https://play.google.com/store/apps/details?id=com.kodagu.now">Read more</a>
                 </div>
             </div>
