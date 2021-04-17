@@ -26,7 +26,7 @@ async function showNews() {
                 <p class = "category">Category : ${news.newsCategories}</p>
                 </a>
                 <div class="details">
-                    <p>${new Date(news.published_at).toLocaleString()}</p>
+                    <p>${new Date(news.published_at).toLocaleDateString()}</p>
                     <a class="btn" href="https://play.google.com/store/apps/details?id=com.kodagu.now">Read more</a>
                 </div>
             </div>
