@@ -17,7 +17,7 @@ async function showNews() {
   const ui = data
     .map((news) => {
       return `
-    <div class="card">
+    <div data-aos="fade-up" class="card">
         <img src=${news.image.url} alt="">
             <div class="content">
                 <h2 class = "title">${news.title}</h2>
@@ -34,6 +34,8 @@ async function showNews() {
     .join('');
   cards.innerHTML = ui;
 }
+
+AOS.init();
 
 //SEARCH
 let txt = document.getElementById('txt');
