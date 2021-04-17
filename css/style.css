@@ -81,7 +81,6 @@ a {
 }
 .content {
   margin: 1rem;
-  /* background-color: red; */
 }
 
 .content h2 {
@@ -126,10 +125,13 @@ a {
 }
 
 .btn {
-  background-color: #fff;
-  color: #12181b;
-  padding: 0.3rem;
+  background-color: steelblue;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
   border-radius: 5px;
+  padding: 5px 10px;
 }
 
 @media (max-width: 650px) {
