@@ -22,34 +22,32 @@ ham.addEventListener('click', () => flex.classList.toggle('flex-show'));
 
 //API STUFF!
 
+window.addEventListener('load', showNews);
+
 let cards = document.querySelector('.cards');
-let xhr = new XMLHttpRequest();
-xhr.open(
-  'GET',
-  'https://newsapi.org/v2/top-headlines?country=in&apiKey=093d814de7c14eee8bbec5784c289ec4',
-  true
-);
-xhr.onload = function () {
-  let news = JSON.parse(this.responseText);
-  let articles = news.articles;
-  let showNews = articles.map((news) => {
-    return `
-                <div class="card">
-                    <img src=${news.urlToImage} alt="">
-                        <div class="content">
-                            <a href="${news.url}" target="_blank">
-                            <h2 class = "title">${news.title}</h2>
-                            <p>${news.description}</p>
-                            <p>Source : ${news.source.name}</p>
-                            </a>
-                        </div>
+async function showNews() {
+  const res = await fetch('https://kodagu.today/newsarticles');
+  const data = await res.json();
+  const ui = data
+    .map((news) => {
+      return `
+    <div class="card">
+        <img src=${news.image.url} alt="">
+            <div class="content">
+                <h2 class = "title">${news.title}</h2>
+                <p>Category: ${news.newsCategories}</p>
+                </a>
+                <div class="details">
+                    <p>${new Date(news.published_at).toLocaleDateString()}</p>
+                    <a class="btn" href="https://play.google.com/store/apps/details?id=com.kodagu.now">Read more</a>
                 </div>
-      `;
-  });
-  showNews = showNews.join('');
-  cards.innerHTML = showNews;
-};
-xhr.send();
+            </div>
+    </div>
+    `;
+    })
+    .join('');
+  cards.innerHTML = ui;
+}
 
 //SEARCH (OPTIONAL)
 

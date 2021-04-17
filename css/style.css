@@ -64,7 +64,7 @@ a {
 
 .card {
   display: flex;
-  width: 70rem;
+  width: 75vw;
   margin: 1rem auto;
   padding: 1rem;
   background-color: #383838;
@@ -92,6 +92,19 @@ a {
   padding: 0.2rem;
   text-align: center;
 }
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #fff;
+  color: #12181b;
+  padding: 0.5rem;
+}
+
 @media (max-width: 650px) {
   nav {
     flex-direction: column;
@@ -117,7 +130,7 @@ a {
   }
   .card {
     flex-direction: column;
-    width: 19rem;
+    /* width: 19rem; */
   }
   .content {
     margin: 0;
