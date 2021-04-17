@@ -1,29 +1,15 @@
 //DARK MODE TOGGLE
-
 let body = document.body;
 let dark = document.querySelector('.dark');
-let nav = document.querySelector('nav');
-let a = document.querySelectorAll('a');
-
-dark.addEventListener('click', () => {
-  body.classList.toggle('body-white');
-  nav.classList.toggle('nav-white');
-  a.forEach((dark) => dark.classList.toggle('a-white'));
-  let card = cards.firstElementChild;
-  Array.from(card).forEach((dark) => dark.classList.toggle('card-white'));
-});
+dark.addEventListener('click', () => body.classList.toggle('white'));
 
 //HAMBURGER MENU
-
 let ham = document.querySelector('.ham');
 let flex = document.querySelector('.flex');
-
 ham.addEventListener('click', () => flex.classList.toggle('flex-show'));
 
 //API STUFF!
-
 window.addEventListener('load', showNews);
-
 let cards = document.querySelector('.cards');
 async function showNews() {
   const res = await fetch('https://kodagu.today/newsarticles');
@@ -35,7 +21,7 @@ async function showNews() {
         <img src=${news.image.url} alt="">
             <div class="content">
                 <h2 class = "title">${news.title}</h2>
-                <p>Category: ${news.newsCategories}</p>
+                <p class = "category">Category : ${news.newsCategories}</p>
                 </a>
                 <div class="details">
                     <p>${new Date(news.published_at).toLocaleDateString()}</p>
@@ -49,8 +35,7 @@ async function showNews() {
   cards.innerHTML = ui;
 }
 
-//SEARCH (OPTIONAL)
-
+//SEARCH
 let txt = document.getElementById('txt');
 txt.addEventListener('input', () => {
   let value = txt.value.toUpperCase();
