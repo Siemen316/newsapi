@@ -151,6 +151,10 @@ a {
   right: 1rem;
 }
 
+.server-down {
+  max-width: 100%;
+}
+
 @media (max-width: 650px) {
   nav {
     flex-direction: column;
